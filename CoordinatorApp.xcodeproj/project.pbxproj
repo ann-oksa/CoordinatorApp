@@ -34,6 +34,9 @@
 		CADFE76625C6E570001F9E51 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFE76525C6E570001F9E51 /* HistoryViewModel.swift */; };
 		CADFE76B25C6E58C001F9E51 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFE76A25C6E58C001F9E51 /* DetailsViewModel.swift */; };
 		CADFE77025C6E5A8001F9E51 /* CellForRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFE76F25C6E5A8001F9E51 /* CellForRecordViewModel.swift */; };
+		CADFE77825C7F04D001F9E51 /* PopoverVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADFE77725C7F04D001F9E51 /* PopoverVC.xib */; };
+		CADFE77D25C7F06E001F9E51 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFE77C25C7F06E001F9E51 /* PopoverViewController.swift */; };
+		CADFE78225C7F116001F9E51 /* PopoverViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFE78125C7F116001F9E51 /* PopoverViewControllerCoordinator.swift */; };
 		CAF145C325C2BD9D00E44A4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF145C225C2BD9D00E44A4C /* AppDelegate.swift */; };
 		CAF145C525C2BD9D00E44A4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF145C425C2BD9D00E44A4C /* SceneDelegate.swift */; };
 		CAF145C725C2BD9D00E44A4C /* TranslationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF145C625C2BD9D00E44A4C /* TranslationViewController.swift */; };
@@ -41,7 +44,6 @@
 		CAF145CF25C2BDA300E44A4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF145CD25C2BDA300E44A4C /* LaunchScreen.storyboard */; };
 		CAF145DA25C2BDA300E44A4C /* CoordinatorAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF145D925C2BDA300E44A4C /* CoordinatorAppTests.swift */; };
 		CAF145E525C2BDA400E44A4C /* CoordinatorAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF145E425C2BDA400E44A4C /* CoordinatorAppUITests.swift */; };
-		CAF145F625C2BDC400E44A4C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF145F525C2BDC400E44A4C /* Model.swift */; };
 		CAF1460425C2BE8100E44A4C /* TranslationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF1460325C2BE8100E44A4C /* TranslationVC.xib */; };
 		CAF1460925C2C06700E44A4C /* HistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF1460825C2C06700E44A4C /* HistoryVC.xib */; };
 		CAF1461325C2C29A00E44A4C /* DetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF1461225C2C29A00E44A4C /* DetailVC.xib */; };
@@ -92,6 +94,9 @@
 		CADFE76525C6E570001F9E51 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		CADFE76A25C6E58C001F9E51 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		CADFE76F25C6E5A8001F9E51 /* CellForRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellForRecordViewModel.swift; sourceTree = "<group>"; };
+		CADFE77725C7F04D001F9E51 /* PopoverVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverVC.xib; sourceTree = "<group>"; };
+		CADFE77C25C7F06E001F9E51 /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		CADFE78125C7F116001F9E51 /* PopoverViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewControllerCoordinator.swift; sourceTree = "<group>"; };
 		CAF145BF25C2BD9D00E44A4C /* CoordinatorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoordinatorApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF145C225C2BD9D00E44A4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAF145C425C2BD9D00E44A4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,7 +110,6 @@
 		CAF145E025C2BDA300E44A4C /* CoordinatorAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoordinatorAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF145E425C2BDA400E44A4C /* CoordinatorAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorAppUITests.swift; sourceTree = "<group>"; };
 		CAF145E625C2BDA400E44A4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CAF145F525C2BDC400E44A4C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CAF1460325C2BE8100E44A4C /* TranslationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TranslationVC.xib; sourceTree = "<group>"; };
 		CAF1460825C2C06700E44A4C /* HistoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryVC.xib; sourceTree = "<group>"; };
 		CAF1461225C2C29A00E44A4C /* DetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailVC.xib; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				CADFE6F725C4208B001F9E51 /* HistoryTableViewCell.swift */,
 				CADFE70625C6D7FC001F9E51 /* DetailsViewController.swift */,
 				CADFE75025C6E2F0001F9E51 /* GameViewController.swift */,
+				CADFE77C25C7F06E001F9E51 /* PopoverViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 				CAB1D2BE25C2DC3300F9E4E0 /* HistoryViewControllerCoordinator.swift */,
 				CADFE70125C6D7DC001F9E51 /* DetailsViewControllerCoordinator.swift */,
 				CADFE75525C6E312001F9E51 /* GameViewControllerCoordinator.swift */,
+				CADFE78125C7F116001F9E51 /* PopoverViewControllerCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -223,7 +229,6 @@
 			children = (
 				CAF145C225C2BD9D00E44A4C /* AppDelegate.swift */,
 				CAF145C425C2BD9D00E44A4C /* SceneDelegate.swift */,
-				CAF145F525C2BDC400E44A4C /* Model.swift */,
 				CADFE72125C6DE9D001F9E51 /* Models */,
 				CADFE70E25C6DDE1001F9E51 /* BuildingFiles */,
 				CAB1D2A525C2CAD800F9E4E0 /* Coordinators */,
@@ -262,6 +267,7 @@
 				CADFE6F825C4208B001F9E51 /* HistoryTableViewCell.xib */,
 				CAF1461225C2C29A00E44A4C /* DetailVC.xib */,
 				CADFE74825C6E1BA001F9E51 /* GameVC.xib */,
+				CADFE77725C7F04D001F9E51 /* PopoverVC.xib */,
 			);
 			path = XibFiles;
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 			files = (
 				CAF145CF25C2BDA300E44A4C /* LaunchScreen.storyboard in Resources */,
 				CAF145CC25C2BDA300E44A4C /* Assets.xcassets in Resources */,
+				CADFE77825C7F04D001F9E51 /* PopoverVC.xib in Resources */,
 				CAF1461325C2C29A00E44A4C /* DetailVC.xib in Resources */,
 				CAF1460925C2C06700E44A4C /* HistoryVC.xib in Resources */,
 				CADFE6FA25C4208B001F9E51 /* HistoryTableViewCell.xib in Resources */,
@@ -422,12 +429,13 @@
 				CADFE75125C6E2F0001F9E51 /* GameViewController.swift in Sources */,
 				CADFE73A25C6E09A001F9E51 /* History.swift in Sources */,
 				CADFE76625C6E570001F9E51 /* HistoryViewModel.swift in Sources */,
+				CADFE77D25C7F06E001F9E51 /* PopoverViewController.swift in Sources */,
 				CADFE73525C6E07E001F9E51 /* Game.swift in Sources */,
+				CADFE78225C7F116001F9E51 /* PopoverViewControllerCoordinator.swift in Sources */,
 				CAF145C525C2BD9D00E44A4C /* SceneDelegate.swift in Sources */,
 				CADFE74425C6E0EC001F9E51 /* AppState.swift in Sources */,
 				CADFE6E025C3E1AD001F9E51 /* HistoryViewController.swift in Sources */,
 				CADFE73F25C6E0D4001F9E51 /* Sorting.swift in Sources */,
-				CAF145F625C2BDC400E44A4C /* Model.swift in Sources */,
 				CAB1D2AF25C2CB2000F9E4E0 /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

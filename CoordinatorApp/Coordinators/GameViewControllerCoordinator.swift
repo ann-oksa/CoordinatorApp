@@ -7,10 +7,13 @@
 
 import UIKit
 
-class GameViewControllerCoordinator: Coordinator {
+class GameViewControllerCoordinator: Coordinator, GameViewControllerDelegate {
+ 
+    
     
     private let presenter: UINavigationController
     private var gameViewController: GameViewController?
+    private var translationViewControllerCoordinator: TranslationViewControllerCoordinator?
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
@@ -19,9 +22,16 @@ class GameViewControllerCoordinator: Coordinator {
     
     func start() {
         let gameViewController = GameViewController(nibName: "GameVC", bundle: nil)
-        //gameViewController.delegate = self
+        gameViewController.delegate = self
+        gameViewController.title = "Game"
         presenter.pushViewController(gameViewController, animated: true)
         self.gameViewController = gameViewController
+    }
+    
+    func toTranslationVCClicked() {
+        let translationViewControllerCoordinator = TranslationViewControllerCoordinator(presenter: presenter)
+        translationViewControllerCoordinator.back()
+        self.translationViewControllerCoordinator = translationViewControllerCoordinator
     }
     
     

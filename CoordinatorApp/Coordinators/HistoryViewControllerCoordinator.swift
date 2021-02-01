@@ -13,26 +13,27 @@ class HistoryViewControllerCoordinator  : Coordinator, HistoryViewControllerDele
     
     private let presenter: UINavigationController
     private var historyViewController: HistoryViewController?
-    private var dictionary = Dictionary()
+   // private var dictionary = Dictionary()
     private var detailsViewControllerCooordinator: DetailsViewControllerCoordinator?
-    var data : [Model]
+    var data : [Record]
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
-        data = dictionary.example
+        data = AppState.shared.getRecords()
     }
     
     func start() {
        let historyViewController = HistoryViewController(nibName: "HistoryVC", bundle: nil)
         historyViewController.delegate = self
         historyViewController.title = "History"
-        historyViewController.dictionary = data
+//        historyViewController.dictionary = data
+      //  historyViewController.dict = data
         presenter.pushViewController(historyViewController, animated: true)
         self.historyViewController = historyViewController
     }
     
-    func historyViewControllerDidSelectRecord(record: Model) {
-        let detailsViewControllerCooordinator = DetailsViewControllerCoordinator(presenter: presenter)
+    func historyViewControllerDidSelectRecord(recordAtIndexPath: IndexPath) {
+        let detailsViewControllerCooordinator = DetailsViewControllerCoordinator(presenter: presenter, recordAtIndexPath: recordAtIndexPath)
         detailsViewControllerCooordinator.start()
         self.detailsViewControllerCooordinator = detailsViewControllerCooordinator
     }

@@ -39,6 +39,13 @@ class TranslationViewControllerCoordinator: Coordinator, TranslationViewControll
         self.gameViewControllerCoordinator = gameViewControllerCoordinator
     }
     
+    func back() {
+        let translationViewController  = TranslationViewController(nibName: "TranslationVC", bundle: nil)
+        translationViewController.delegate = self
+        presenter.popViewController(animated: true)
+        self.translationViewController = translationViewController
+    }
+    
     
     
 }
