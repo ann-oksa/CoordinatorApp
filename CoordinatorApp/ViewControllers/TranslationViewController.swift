@@ -13,7 +13,7 @@ protocol TranslationViewControllerDelegate {
 }
 
 class TranslationViewController: UIViewController, UITextFieldDelegate, TranslationDelegate {
-
+    
     @IBOutlet weak var chanchingLanguageController: UISegmentedControl!
     @IBOutlet weak var indicatorOfDownloading: UIActivityIndicatorView!
     @IBOutlet weak var translationLabel: UILabel!
@@ -21,7 +21,7 @@ class TranslationViewController: UIViewController, UITextFieldDelegate, Translat
     
     let translationViewModel = TranslationViewModel()
     var delegate: TranslationViewControllerDelegate?
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,9 +35,9 @@ class TranslationViewController: UIViewController, UITextFieldDelegate, Translat
         view.addGestureRecognizer(gestureRecognizer)
         indicatorOfDownloading.isHidden = true
         wordInputField.returnKeyType = .go
-    
+        
     }
-  
+    
     @IBAction func getTranslation(_ sender: UIButton) {
         guard let inputText = wordInputField.text,
               inputText.isEmpty == false else {
@@ -59,7 +59,6 @@ class TranslationViewController: UIViewController, UITextFieldDelegate, Translat
         translationViewModel.changeLanguageDependingOnTheIndex(index: chanchingLanguageController.selectedSegmentIndex)
     }
     
-    
     @objc func hideKeyboardWithTappingOnScreen() {
         view.endEditing(true)
     }
@@ -68,7 +67,7 @@ class TranslationViewController: UIViewController, UITextFieldDelegate, Translat
         wordInputField.resignFirstResponder()
         return true
     }
-
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         wordInputField.text = ""
     }

@@ -7,27 +7,39 @@
 
 import UIKit
 
-class DetailsViewControllerCoordinator: Coordinator {
+class DetailsViewControllerCoordinator: Coordinator, DetailsViewControllerDelegate {
+   
+    
+  
+    
     
     private let presenter: UINavigationController
     private var detailsViewController: DetailsViewController?
     private var historyViewController: HistoryViewController?
-    private var recordAtIndexPath: IndexPath
+    private var historyViewControllerCoordinator: HistoryViewControllerCoordinator?
+    private var record: Record
     
     
-    init(presenter: UINavigationController, recordAtIndexPath: IndexPath) {
+    init(presenter: UINavigationController, record: Record) {
         self.presenter = presenter
-        self.recordAtIndexPath = recordAtIndexPath
+        self.record = record
     }
     
     func start() {
         let detailsViewController = DetailsViewController(nibName: "DetailVC", bundle: nil)
-        //detailsViewController.delegate = self
-        //            destinationVC.detailsViewModel = DetailsViewModel(newChosenRecord: historyViewModel.chosenRecord!)
-        detailsViewController.
+        detailsViewController.delegate = self
+        detailsViewController.detailsViewModel = DetailsViewModel(newChosenRecord: record)
         presenter.pushViewController(detailsViewController, animated: true)
         self.detailsViewController = detailsViewController
     }
+    
+    func toHistoryVCClicked() {
+        let historyViewControllerCoordinator = HistoryViewControllerCoordinator(presenter: presenter)
+        historyViewControllerCoordinator.back()
+        self.historyViewControllerCoordinator = historyViewControllerCoordinator
+    }
+    
+    
     
     
 }

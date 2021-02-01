@@ -12,17 +12,17 @@ protocol GameViewControllerDelegate: class {
 }
 
 class GameViewController: UIViewController, GameDelegate {
-
+    
     @IBOutlet weak var buttonCard: UIButton!
     @IBOutlet weak var buttonNext: UIButton!
     @IBOutlet weak var buttonPrevious: UIButton!
     
     let gameViewModel = GameViewModel()
     weak var delegate: GameViewControllerDelegate?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         gameViewModel.delegate =  self
         gameViewModel.setValueForNewGame()
         checkRecordsCountInHistory()
@@ -37,6 +37,7 @@ class GameViewController: UIViewController, GameDelegate {
         gameViewModel.nextClicked()
         gameViewModel.chooseEnotherCard()
     }
+    
     @IBAction func previousClicked(_ sender: UIButton) {
         gameViewModel.previousClicked()
         gameViewModel.chooseEnotherCard()

@@ -8,7 +8,7 @@
 import UIKit
 
 class ApplicationCoordinator: Coordinator {
-   // let kanjiStorage: KanjiStorage
+   
     let window: UIWindow
     let rootViewController : UINavigationController
     let translationViewControllerCoordinator: TranslationViewControllerCoordinator
@@ -18,8 +18,6 @@ class ApplicationCoordinator: Coordinator {
         rootViewController = UINavigationController()
         rootViewController.navigationBar.prefersLargeTitles = true
         
-       // kanjiStorage = KanjiStorage()
-        //allKanjiListCoordinator = AllKanjiListCoordinator(presenter: rootViewController, kanjiStorage: kanjiStorage)
         translationViewControllerCoordinator = TranslationViewControllerCoordinator(presenter: rootViewController)
 
     }

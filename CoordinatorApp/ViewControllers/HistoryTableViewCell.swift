@@ -8,12 +8,13 @@
 import UIKit
 
 class HistoryTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var translationLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     func bind(_ viewModel: CellForRecordViewModel) {
