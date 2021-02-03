@@ -10,13 +10,13 @@ import Foundation
 
 class  HistoryViewModel {
     
-    var appState = AppState.shared
+    var appState : AppState
     var chosenRecord: Record?
     var switchingStateOfLanguages = true
-    let constants = IdentifiersForSegue()
     var listOfCellViewModel = [CellForRecordViewModel]()
     
-    init(records:  [Record]) {
+    init(records:  [Record], appState: AppState) {
+        self.appState = appState
         //из этого массива делаем массив CellForRecordViewModel
         for record in records {
             let cellVM = CellForRecordViewModel(rec: record, englishLanguageOnLeftSide: switchingStateOfLanguages)

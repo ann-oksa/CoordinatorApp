@@ -14,14 +14,17 @@ class GameViewControllerCoordinator: Coordinator, GameViewControllerDelegate {
     private let presenter: UINavigationController
     private var gameViewController: GameViewController?
     private var translationViewControllerCoordinator: TranslationViewControllerCoordinator?
+    private var appState: AppState
     
-    init(presenter: UINavigationController) {
+    init(presenter: UINavigationController, appState: AppState) {
         self.presenter = presenter
+        self.appState = appState
     }
     
     
     func start() {
-        let gameViewController = GameViewController(nibName: "GameVC", bundle: nil)
+        let viewModel = GameViewModel(appState: appState)
+        let gameViewController  = GameViewController(viewModel: viewModel)
         gameViewController.delegate = self
         gameViewController.title = "Game"
         presenter.pushViewController(gameViewController, animated: true)
@@ -29,9 +32,7 @@ class GameViewControllerCoordinator: Coordinator, GameViewControllerDelegate {
     }
     
     func toTranslationVCClicked() {
-        let translationViewControllerCoordinator = TranslationViewControllerCoordinator(presenter: presenter)
-        translationViewControllerCoordinator.back()
-        self.translationViewControllerCoordinator = translationViewControllerCoordinator
+        presenter.popViewController(animated: true)
     }
     
     

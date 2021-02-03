@@ -8,26 +8,21 @@
 import UIKit
 
 class HistoryViewControllerCoordinator  : Coordinator, HistoryViewControllerDelegate {
-   
-    
-   
-    
     
     private let presenter: UINavigationController
-    
     private var historyViewController: HistoryViewController?
     private var detailsViewControllerCooordinator: DetailsViewControllerCoordinator?
     private var popoverViewControllerCoordinator: PopoverViewControllerCoordinator?
-    var data : [Record]
+    private var appState: AppState
     
-    init(presenter: UINavigationController) {
+    init(presenter: UINavigationController, appState: AppState) {
         self.presenter = presenter
-        //self.presenterForPopover = presenterForPopover
-        data = AppState.shared.getRecords()
+        self.appState = appState
     }
     
     func start() {
-       let historyViewController = HistoryViewController(nibName: "HistoryVC", bundle: nil)
+        let viewModel = HistoryViewModel(records: appState.getRecords(), appState: appState)
+        let historyViewController = HistoryViewController(viewModel: viewModel)
         historyViewController.delegate = self
         historyViewController.title = "History"
         presenter.pushViewController(historyViewController, animated: true)
@@ -35,25 +30,14 @@ class HistoryViewControllerCoordinator  : Coordinator, HistoryViewControllerDele
     }
     
     func historyViewControllerDidSelectRecord(record: Record) {
-        let detailsViewControllerCooordinator = DetailsViewControllerCoordinator(presenter: presenter, record: record)
+        let detailsViewControllerCooordinator = DetailsViewControllerCoordinator(presenter: presenter, record: record, appState: appState)
         detailsViewControllerCooordinator.start()
         self.detailsViewControllerCooordinator = detailsViewControllerCooordinator
     }
     
-    func back() {
-       let historyViewController = HistoryViewController(nibName: "HistoryVC", bundle: nil)
-        historyViewController.delegate = self
-        historyViewController.title = "History"
-        presenter.popViewController(animated: true)
-        self.historyViewController = historyViewController
-    }
-    
     func historyViewControllerDidSelectSortItem() {
-        let popoverViewControllerCoordinator = PopoverViewControllerCoordinator(presenter: presenter)
+        let popoverViewControllerCoordinator = PopoverViewControllerCoordinator(presenter: presenter, appState: appState)
         popoverViewControllerCoordinator.start()
         self.popoverViewControllerCoordinator = popoverViewControllerCoordinator
-        
     }
-    
-    
 }

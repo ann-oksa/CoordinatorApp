@@ -19,8 +19,17 @@ class TranslationViewController: UIViewController, UITextFieldDelegate, Translat
     @IBOutlet weak var translationLabel: UILabel!
     @IBOutlet weak var wordInputField: UITextField!
     
-    let translationViewModel = TranslationViewModel()
+    let translationViewModel : TranslationViewModel
     var delegate: TranslationViewControllerDelegate?
+    
+    init(viewModel: TranslationViewModel) {
+        translationViewModel = viewModel
+        super.init(nibName: "TranslationVC", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

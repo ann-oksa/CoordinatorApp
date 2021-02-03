@@ -16,12 +16,15 @@ protocol TranslationDelegate: class {
 class  TranslationViewModel {
     
     var transformation = TranslationService()
-    var appState = AppState.shared
-    let constants = IdentifiersForSegue()
+    var appState: AppState
     var isIndicatorOfDownloadingHidden = true {
         didSet {
             delegate?.isLoadingInProgress(loading: isIndicatorOfDownloadingHidden)
         }
+    }
+    
+    init(appState: AppState) {
+        self.appState = appState
     }
     // Assignment for this variable made for right saving words in func setValuesOfWordsDependingOnLanguages (english words in one group, russian words in enother group)
     var word1 = String()

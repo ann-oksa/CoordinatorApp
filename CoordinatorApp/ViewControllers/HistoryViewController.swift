@@ -21,9 +21,18 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    let historyViewModel = HistoryViewModel(records: AppState.shared.getRecords())
+    let historyViewModel : HistoryViewModel
     var cellAccessoryType = UITableViewCell.AccessoryType.disclosureIndicator
     weak var delegate: HistoryViewControllerDelegate?
+    
+    init(viewModel: HistoryViewModel) {
+        historyViewModel = viewModel
+        super.init(nibName: "HistoryVC", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,18 +87,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @objc func openSortMenuForWordsInHistory() {
-        print("show popover")
         delegate?.historyViewControllerDidSelectSortItem()
-//        guard let popVC = storyboard?.instantiateViewController(identifier: historyViewModel.constants.identifierForPopover) as? PopoverViewController else { return  }
-//        popVC.modalPresentationStyle =  .popover
-//        let popOverVC = popVC.popoverPresentationController
-//        popOverVC?.delegate = self
-//        popOverVC?.barButtonItem = navigationItem.rightBarButtonItem
-//        popVC.preferredContentSize = CGSize(width: 350, height: 150)
-//        popVC.delegate = self
-//        self.present(popVC, animated: true)
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return historyViewModel.listOfCellViewModel.count

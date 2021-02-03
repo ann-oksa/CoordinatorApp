@@ -8,38 +8,31 @@
 import UIKit
 
 class PopoverViewControllerCoordinator: Coordinator {
-    //        guard let popVC = storyboard?.instantiateViewController(identifier: historyViewModel.constants.identifierForPopover) as? PopoverViewController else { return  }
-    //        popVC.modalPresentationStyle =  .popover
-    //        let popOverVC = popVC.popoverPresentationController
-    //        popOverVC?.delegate = self
-    //        popOverVC?.barButtonItem = navigationItem.rightBarButtonItem
-    //        popVC.preferredContentSize = CGSize(width: 350, height: 150)
-    //        popVC.delegate = self
-    //        self.present(popVC, animated: true)
     
     private let presenter: UINavigationController
     private var popoverViewController: PopoverViewController?
     private var historyViewController: HistoryViewController?
-    private var navigationIt: UINavigationItem?
+    private var appState: AppState
     
-    init(presenter: UINavigationController) {
+    init(presenter: UINavigationController, appState: AppState) {
         self.presenter = presenter
+        self.appState = appState
     }
     
     func start() {
-        let popoverViewController = PopoverViewController(nibName: "PopoverVC", bundle: nil)
-        //popoverViewController.delegate = self
+        guard let topController : HistoryViewController = presenter.topViewController as? HistoryViewController else {
+           print("PopoverViewControllerCoordinator -> start -> cannot create top controller as HistoryViewController")
+            return
+        }
+        
+        let popoverViewController = PopoverViewController(appState: appState)
         popoverViewController.modalPresentationStyle = .popover
         let popOverVC = popoverViewController.popoverPresentationController
-        popOverVC?.delegate = historyViewController
-        popOverVC?.barButtonItem = navigationIt?.rightBarButtonItem
+        popOverVC?.delegate = topController
+        popOverVC?.barButtonItem = topController.navigationItem.rightBarButtonItem
         popoverViewController.preferredContentSize = CGSize(width: 350, height: 150)
-        popoverViewController.delegate = historyViewController
-        
-        presenter.present(popoverViewController, animated: true, completion: nil)
-       // presenter.pushViewController(popoverViewController, animated: true)
+        popoverViewController.delegate = topController
+        presenter.topViewController?.present(popoverViewController, animated: true, completion: nil)
         self.popoverViewController = popoverViewController
     }
-    
-    
 }

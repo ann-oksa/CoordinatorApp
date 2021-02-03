@@ -8,20 +8,29 @@
 import UIKit
 
 protocol SortPickerDelegate {
-    
     func selectSortingMethod(method: KindOfSorting)
-    
 }
 
 class PopoverViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     let picker = UIPickerView()
-    let arrayOfSorting = AppState.shared.sorting.arrayOfSorting
     var delegate : SortPickerDelegate?
+    var appState: AppState
+    var arrayOfSorting : [KindOfSorting] = []
+    
+    init(appState: AppState) {
+        self.appState = appState
+        super.init(nibName: "PopoverVC", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        arrayOfSorting = appState.sorting.arrayOfSorting
         picker.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(picker)
         

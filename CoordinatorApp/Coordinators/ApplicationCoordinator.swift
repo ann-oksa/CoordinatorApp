@@ -12,16 +12,16 @@ class ApplicationCoordinator: Coordinator {
     let window: UIWindow
     let rootViewController : UINavigationController
     let translationViewControllerCoordinator: TranslationViewControllerCoordinator
+    let appState: AppState
     
-    init(window: UIWindow) {
+    init(window: UIWindow, appState: AppState) {
         self.window = window
+        self.appState = appState
         rootViewController = UINavigationController()
         rootViewController.navigationBar.prefersLargeTitles = true
-        
-        translationViewControllerCoordinator = TranslationViewControllerCoordinator(presenter: rootViewController)
+        translationViewControllerCoordinator = TranslationViewControllerCoordinator(presenter: rootViewController, appState: appState)
 
     }
-    
     
     func start() {
         window.rootViewController = rootViewController

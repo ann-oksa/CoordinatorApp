@@ -19,7 +19,6 @@
 		CADFE71025C6DE06001F9E51 /* TranslationServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFE70F25C6DE06001F9E51 /* TranslationServise.swift */; };
 		CADFE71825C6DE3E001F9E51 /* GoogleTranslateAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFE71725C6DE3E001F9E51 /* GoogleTranslateAPIManager.swift */; };
 		CADFE71D25C6DE64001F9E51 /* CreatingURLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFE71C25C6DE64001F9E51 /* CreatingURLManager.swift */; };
-		CADFE72325C6DEB9001F9E51 /* IdentifiersForSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFE72225C6DEB9001F9E51 /* IdentifiersForSegue.swift */; };
 		CADFE72B25C6DEF6001F9E51 /* TranslationOfWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFE72A25C6DEF5001F9E51 /* TranslationOfWord.swift */; };
 		CADFE73025C6DF1F001F9E51 /* GoogleTranslateAPIJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFE72F25C6DF1F001F9E51 /* GoogleTranslateAPIJSON.swift */; };
 		CADFE73525C6E07E001F9E51 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFE73425C6E07E001F9E51 /* Game.swift */; };
@@ -79,7 +78,6 @@
 		CADFE70F25C6DE06001F9E51 /* TranslationServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationServise.swift; sourceTree = "<group>"; };
 		CADFE71725C6DE3E001F9E51 /* GoogleTranslateAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTranslateAPIManager.swift; sourceTree = "<group>"; };
 		CADFE71C25C6DE64001F9E51 /* CreatingURLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingURLManager.swift; sourceTree = "<group>"; };
-		CADFE72225C6DEB9001F9E51 /* IdentifiersForSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiersForSegue.swift; sourceTree = "<group>"; };
 		CADFE72A25C6DEF5001F9E51 /* TranslationOfWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationOfWord.swift; sourceTree = "<group>"; };
 		CADFE72F25C6DF1F001F9E51 /* GoogleTranslateAPIJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTranslateAPIJSON.swift; sourceTree = "<group>"; };
 		CADFE73425C6E07E001F9E51 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 		CADFE72125C6DE9D001F9E51 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CADFE72225C6DEB9001F9E51 /* IdentifiersForSegue.swift */,
 				CADFE72A25C6DEF5001F9E51 /* TranslationOfWord.swift */,
 				CADFE72F25C6DF1F001F9E51 /* GoogleTranslateAPIJSON.swift */,
 				CADFE73425C6E07E001F9E51 /* Game.swift */,
@@ -424,7 +421,6 @@
 				CADFE76125C6E554001F9E51 /* TranslationViewModel.swift in Sources */,
 				CADFE73025C6DF1F001F9E51 /* GoogleTranslateAPIJSON.swift in Sources */,
 				CADFE71825C6DE3E001F9E51 /* GoogleTranslateAPIManager.swift in Sources */,
-				CADFE72325C6DEB9001F9E51 /* IdentifiersForSegue.swift in Sources */,
 				CAB1D2BF25C2DC3300F9E4E0 /* HistoryViewControllerCoordinator.swift in Sources */,
 				CADFE75125C6E2F0001F9E51 /* GameViewController.swift in Sources */,
 				CADFE73A25C6E09A001F9E51 /* History.swift in Sources */,

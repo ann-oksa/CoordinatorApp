@@ -14,12 +14,12 @@ protocol DetailsDelegate: class {
 class DetailsViewModel {
     
     let newChosenRecord : Record
-    var shared = AppState.shared
-    let constants = IdentifiersForSegue()
+    var appState : AppState
     var wordOne: String
     var wordTwo: String
     
-    init(newChosenRecord: Record) {
+    init(newChosenRecord: Record, appState: AppState ) {
+        self.appState = appState
         self.newChosenRecord = newChosenRecord
         self.wordOne = newChosenRecord.word1
         self.wordTwo = newChosenRecord.word2
@@ -32,9 +32,7 @@ class DetailsViewModel {
     }
     
     func saveChangesWithButtonClicked() {
-        shared.history.saveChangesInHistory(word1: wordOne, word2: wordTwo, record: newChosenRecord)
-        print(wordOne)
-        print(wordTwo)
+        appState.history.saveChangesInHistory(word1: wordOne, word2: wordTwo, record: newChosenRecord)
     }
    
     public func wordOneAndTwoDidChanged(word1: String?, word2: String?) {

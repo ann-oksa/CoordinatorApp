@@ -17,8 +17,17 @@ class GameViewController: UIViewController, GameDelegate {
     @IBOutlet weak var buttonNext: UIButton!
     @IBOutlet weak var buttonPrevious: UIButton!
     
-    let gameViewModel = GameViewModel()
+    let gameViewModel : GameViewModel
     weak var delegate: GameViewControllerDelegate?
+    
+    init(viewModel: GameViewModel) {
+        gameViewModel = viewModel
+        super.init(nibName: "GameVC", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

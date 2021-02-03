@@ -11,6 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     private var applicationCoordinator: ApplicationCoordinator?
+    var appState = AppState()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -20,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         if window != nil {
-            let applicationCoordinator = ApplicationCoordinator(window: window!)
+            let applicationCoordinator = ApplicationCoordinator(window: window!, appState: appState)
             self.applicationCoordinator = applicationCoordinator
             applicationCoordinator.start()
         }

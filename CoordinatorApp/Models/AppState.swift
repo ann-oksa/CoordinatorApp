@@ -8,17 +8,11 @@
 import Foundation
 
 class AppState {
-    
-    static let shared = AppState()
-    
-    let history : History
+
+    let history = History()
     let sorting = Sorting()
     var targetLanguage: Language = .russian
     var sourceLanguage: Language = .english
-    
-    private init() {
-        history = History()
-    }
     
     func changeLanguageDependingOnTheIndex(index: Int) {
         if index == 0 {

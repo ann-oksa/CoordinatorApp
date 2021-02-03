@@ -26,8 +26,7 @@ class GameViewModel {
     let empty = ""
     
     var game = Game()
-    let shared = AppState.shared
-    let constants = IdentifiersForSegue()
+    let appState : AppState
     var isPreviousButtonHidden = true {
         didSet {
             delegate?.visibilityOfPreviousButton(is: isPreviousButtonHidden)
@@ -36,10 +35,14 @@ class GameViewModel {
     
     weak var delegate: GameDelegate?
     
+    init(appState: AppState) {
+        self.appState = appState
+    }
+    
     func setValueForNewGame() {
         game.currentIndexOfCard = 0
         game.isCardOpen = true
-        game.records = shared.history.journal
+        game.records = appState.history.journal
         game.someCardTitle = ""
         isPreviousButtonHidden = true
     }
