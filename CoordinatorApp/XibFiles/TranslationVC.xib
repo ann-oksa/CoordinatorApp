@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="chanchingLanguageController" destination="OKN-Vy-eqg" id="1Oh-LH-sm4"/>
                 <outlet property="indicatorOfDownloading" destination="IwJ-Fl-EMX" id="IXL-gS-DeI"/>
+                <outlet property="translateButton" destination="ZOe-IL-ZbB" id="Tju-f1-I5B"/>
                 <outlet property="translationLabel" destination="kSf-kH-aOA" id="BTJ-9j-vMW"/>
                 <outlet property="view" destination="iN0-l3-epB" id="FzD-cP-noR"/>
                 <outlet property="wordInputField" destination="gBc-SL-M9z" id="jQH-hc-Qnd"/>
@@ -22,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wall" translatesAutoresizingMaskIntoConstraints="NO" id="jGq-tN-RYc">
-                    <rect key="frame" x="0.0" y="-100" width="375" height="767"/>
+                    <rect key="frame" x="0.0" y="-150" width="375" height="867"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translate to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhO-ix-8pS">
                     <rect key="frame" x="81" y="20" width="205" height="25.5"/>
@@ -106,11 +107,11 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="IwJ-Fl-EMX" secondAttribute="trailing" constant="160" id="8ep-HK-JQS"/>
                 <constraint firstItem="kSf-kH-aOA" firstAttribute="top" secondItem="IwJ-Fl-EMX" secondAttribute="bottom" constant="3" id="BYw-GD-tKR"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OKN-Vy-eqg" secondAttribute="trailing" constant="82" id="CdY-mP-Xn8"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="jGq-tN-RYc" secondAttribute="bottom" id="E7e-Rg-GOj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="jGq-tN-RYc" secondAttribute="bottom" constant="-50" id="E7e-Rg-GOj"/>
                 <constraint firstItem="CaS-sg-2fI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="48" id="Ekq-Bt-hs8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eG7-1g-yQ0" secondAttribute="trailing" constant="49" id="FVA-eT-s9w"/>
                 <constraint firstItem="nhO-ix-8pS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="GSp-5E-BYW"/>
-                <constraint firstItem="jGq-tN-RYc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="-100" id="HOl-p8-9vn"/>
+                <constraint firstItem="jGq-tN-RYc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="-150" id="HOl-p8-9vn"/>
                 <constraint firstItem="OKN-Vy-eqg" firstAttribute="top" secondItem="nhO-ix-8pS" secondAttribute="bottom" constant="21.5" id="IY8-LF-XyG"/>
                 <constraint firstItem="eG7-1g-yQ0" firstAttribute="height" secondItem="CaS-sg-2fI" secondAttribute="height" id="MzF-hJ-rlQ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jGq-tN-RYc" secondAttribute="trailing" id="P10-Q0-5CI"/>

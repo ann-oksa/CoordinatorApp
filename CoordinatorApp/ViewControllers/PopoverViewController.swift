@@ -15,11 +15,10 @@ class PopoverViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     let picker = UIPickerView()
     var delegate : SortPickerDelegate?
-    var appState: AppState
-    var arrayOfSorting : [KindOfSorting] = []
+    let popoverViewModel : PopoverViewModel
     
-    init(appState: AppState) {
-        self.appState = appState
+    init(viewModel: PopoverViewModel) {
+        popoverViewModel = viewModel
         super.init(nibName: "PopoverVC", bundle: nil)
     }
     
@@ -27,10 +26,12 @@ class PopoverViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        arrayOfSorting = appState.sorting.arrayOfSorting
+        popoverViewModel.arrayOfSorting = popoverViewModel.appState.sorting.arrayOfSorting
+       
         picker.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(picker)
         
@@ -40,6 +41,10 @@ class PopoverViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         
         picker.delegate  = self
         picker.dataSource = self
+        
+        popoverViewModel.setIndexOfChosenRow()
+        picker.selectRow(popoverViewModel.chosenRow, inComponent: 0, animated: true)
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -47,15 +52,16 @@ class PopoverViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return arrayOfSorting.count
+        return popoverViewModel.arrayOfSorting.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return arrayOfSorting[row].rawValue
+        return popoverViewModel.arrayOfSorting[row].rawValue
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        delegate?.selectSortingMethod(method: arrayOfSorting[row])
+        delegate?.selectSortingMethod(method: popoverViewModel.arrayOfSorting[row])
+        popoverViewModel.saveIndexOfChosenRow(row: row)
     }
     
     

@@ -50,4 +50,11 @@ class  HistoryViewModel {
         case .latest: listOfCellViewModel.sort(by: {$1.rec.date < $0.rec.date})
         }
     }
+    
+    func configureListOfModel() {
+        for record in listOfCellViewModel {
+            record.configure(isEnglishLanguageOnLeftSide: true)
+            
+        }
+    }
 }

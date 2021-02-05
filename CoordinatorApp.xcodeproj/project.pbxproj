@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA7579D425CAF4A700ADFCF3 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7579D325CAF4A700ADFCF3 /* Identifiers.swift */; };
+		CA7579D925CBE54800ADFCF3 /* PopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7579D825CBE54800ADFCF3 /* PopoverViewModel.swift */; };
+		CA7579DF25CD1F6800ADFCF3 /* ViewModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7579DE25CD1F6800ADFCF3 /* ViewModelsTests.swift */; };
 		CAB1D2A725C2CAFF00F9E4E0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB1D2A625C2CAFF00F9E4E0 /* Coordinator.swift */; };
 		CAB1D2AF25C2CB2000F9E4E0 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB1D2AE25C2CB2000F9E4E0 /* ApplicationCoordinator.swift */; };
 		CAB1D2B425C2CBA100F9E4E0 /* TranslationViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB1D2B325C2CBA100F9E4E0 /* TranslationViewControllerCoordinator.swift */; };
@@ -41,7 +44,7 @@
 		CAF145C725C2BD9D00E44A4C /* TranslationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF145C625C2BD9D00E44A4C /* TranslationViewController.swift */; };
 		CAF145CC25C2BDA300E44A4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF145CB25C2BDA300E44A4C /* Assets.xcassets */; };
 		CAF145CF25C2BDA300E44A4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF145CD25C2BDA300E44A4C /* LaunchScreen.storyboard */; };
-		CAF145DA25C2BDA300E44A4C /* CoordinatorAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF145D925C2BDA300E44A4C /* CoordinatorAppTests.swift */; };
+		CAF145DA25C2BDA300E44A4C /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF145D925C2BDA300E44A4C /* ModelTests.swift */; };
 		CAF145E525C2BDA400E44A4C /* CoordinatorAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF145E425C2BDA400E44A4C /* CoordinatorAppUITests.swift */; };
 		CAF1460425C2BE8100E44A4C /* TranslationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF1460325C2BE8100E44A4C /* TranslationVC.xib */; };
 		CAF1460925C2C06700E44A4C /* HistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF1460825C2C06700E44A4C /* HistoryVC.xib */; };
@@ -66,6 +69,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA7579D325CAF4A700ADFCF3 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
+		CA7579D825CBE54800ADFCF3 /* PopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewModel.swift; sourceTree = "<group>"; };
+		CA7579DE25CD1F6800ADFCF3 /* ViewModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelsTests.swift; sourceTree = "<group>"; };
 		CAB1D2A625C2CAFF00F9E4E0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CAB1D2AE25C2CB2000F9E4E0 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		CAB1D2B325C2CBA100F9E4E0 /* TranslationViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewControllerCoordinator.swift; sourceTree = "<group>"; };
@@ -103,7 +109,7 @@
 		CAF145CE25C2BDA300E44A4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAF145D025C2BDA300E44A4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAF145D525C2BDA300E44A4C /* CoordinatorAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoordinatorAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CAF145D925C2BDA300E44A4C /* CoordinatorAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorAppTests.swift; sourceTree = "<group>"; };
+		CAF145D925C2BDA300E44A4C /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		CAF145DB25C2BDA300E44A4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAF145E025C2BDA300E44A4C /* CoordinatorAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoordinatorAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF145E425C2BDA400E44A4C /* CoordinatorAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorAppUITests.swift; sourceTree = "<group>"; };
@@ -185,6 +191,7 @@
 				CADFE73925C6E09A001F9E51 /* History.swift */,
 				CADFE73E25C6E0D4001F9E51 /* Sorting.swift */,
 				CADFE74325C6E0EC001F9E51 /* AppState.swift */,
+				CA7579D325CAF4A700ADFCF3 /* Identifiers.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,6 +204,7 @@
 				CADFE76525C6E570001F9E51 /* HistoryViewModel.swift */,
 				CADFE76A25C6E58C001F9E51 /* DetailsViewModel.swift */,
 				CADFE76F25C6E5A8001F9E51 /* CellForRecordViewModel.swift */,
+				CA7579D825CBE54800ADFCF3 /* PopoverViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -241,7 +249,8 @@
 		CAF145D825C2BDA300E44A4C /* CoordinatorAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				CAF145D925C2BDA300E44A4C /* CoordinatorAppTests.swift */,
+				CAF145D925C2BDA300E44A4C /* ModelTests.swift */,
+				CA7579DE25CD1F6800ADFCF3 /* ViewModelsTests.swift */,
 				CAF145DB25C2BDA300E44A4C /* Info.plist */,
 			);
 			path = CoordinatorAppTests;
@@ -425,6 +434,7 @@
 				CADFE75125C6E2F0001F9E51 /* GameViewController.swift in Sources */,
 				CADFE73A25C6E09A001F9E51 /* History.swift in Sources */,
 				CADFE76625C6E570001F9E51 /* HistoryViewModel.swift in Sources */,
+				CA7579D925CBE54800ADFCF3 /* PopoverViewModel.swift in Sources */,
 				CADFE77D25C7F06E001F9E51 /* PopoverViewController.swift in Sources */,
 				CADFE73525C6E07E001F9E51 /* Game.swift in Sources */,
 				CADFE78225C7F116001F9E51 /* PopoverViewControllerCoordinator.swift in Sources */,
@@ -432,6 +442,7 @@
 				CADFE74425C6E0EC001F9E51 /* AppState.swift in Sources */,
 				CADFE6E025C3E1AD001F9E51 /* HistoryViewController.swift in Sources */,
 				CADFE73F25C6E0D4001F9E51 /* Sorting.swift in Sources */,
+				CA7579D425CAF4A700ADFCF3 /* Identifiers.swift in Sources */,
 				CAB1D2AF25C2CB2000F9E4E0 /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,7 +451,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAF145DA25C2BDA300E44A4C /* CoordinatorAppTests.swift in Sources */,
+				CAF145DA25C2BDA300E44A4C /* ModelTests.swift in Sources */,
+				CA7579DF25CD1F6800ADFCF3 /* ViewModelsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,10 +20,13 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             tableView.dataSource = self
         }
     }
-    
+    let identifier = Identifiers()
     let historyViewModel : HistoryViewModel
     var cellAccessoryType = UITableViewCell.AccessoryType.disclosureIndicator
     weak var delegate: HistoryViewControllerDelegate?
+    
+    
+    
     
     init(viewModel: HistoryViewModel) {
         historyViewModel = viewModel
@@ -37,8 +40,11 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
 
+       // var type : UIKeyboardType = .asciiCapable
+        
+        
         let nib  = UINib(nibName: "HistoryTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "cell")
+        tableView.register(nib, forCellReuseIdentifier: "cellForRecord")
         tableView.reloadData()
         let sortButton = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(openSortMenuForWordsInHistory))
         sortButton.tintColor = .black
@@ -51,10 +57,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        for record in historyViewModel.listOfCellViewModel {
-            record.configure(isEnglishLanguageOnLeftSide: true)
-            tableView.reloadData()
-        }
+        historyViewModel.configureListOfModel()
+        tableView.reloadData()
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -95,7 +99,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? HistoryTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier.cellForRecord, for: indexPath) as? HistoryTableViewCell
         cell?.accessoryType = cellAccessoryType
         let cellViewModel = historyViewModel.listOfCellViewModel[indexPath.row]
         cell?.bind(cellViewModel)
@@ -104,7 +108,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         historyViewModel.selectRowToGo(indexPath: indexPath)
-        delegate?.historyViewControllerDidSelectRecord(record: historyViewModel.chosenRecord ?? Record(word1: "", word2: ""))
+        delegate?.historyViewControllerDidSelectRecord(record: historyViewModel.chosenRecord ?? Record(word1: "", word2: "") )
         tableView.deselectRow(at: indexPath, animated: true)
 
     }

@@ -62,8 +62,8 @@ class GameViewController: UIViewController, GameDelegate {
         let alert = UIAlertController(title: gameViewModel.learnAllWords, message: gameViewModel.doYouWantToPlayAgain, preferredStyle: .alert)
         let cancelButton = UIAlertAction(title: gameViewModel.cancel, style: .cancel, handler: nil)
         let okButton = UIAlertAction(title: gameViewModel.ok, style: .default) { (action) in
-            self.gameViewModel.game.currentIndexOfCard = 0
-            self.gameViewModel.game.someCardTitle = self.gameViewModel.game.records[self.gameViewModel.game.currentIndexOfCard].word2
+            self.gameViewModel.actionForNewGame()
+            
             self.setTitleForButtonCard(with: self.gameViewModel.game.someCardTitle)
         }
         alert.addAction(cancelButton)

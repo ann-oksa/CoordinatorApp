@@ -24,8 +24,8 @@ class PopoverViewControllerCoordinator: Coordinator {
            print("PopoverViewControllerCoordinator -> start -> cannot create top controller as HistoryViewController")
             return
         }
-        
-        let popoverViewController = PopoverViewController(appState: appState)
+        let viewModel = PopoverViewModel(appState: appState)
+        let popoverViewController = PopoverViewController(viewModel: viewModel)
         popoverViewController.modalPresentationStyle = .popover
         let popOverVC = popoverViewController.popoverPresentationController
         popOverVC?.delegate = topController

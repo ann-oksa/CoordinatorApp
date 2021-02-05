@@ -18,6 +18,7 @@ class TranslationViewController: UIViewController, UITextFieldDelegate, Translat
     @IBOutlet weak var indicatorOfDownloading: UIActivityIndicatorView!
     @IBOutlet weak var translationLabel: UILabel!
     @IBOutlet weak var wordInputField: UITextField!
+    @IBOutlet weak var translateButton: UIButton!
     
     let translationViewModel : TranslationViewModel
     var delegate: TranslationViewControllerDelegate?
@@ -36,13 +37,13 @@ class TranslationViewController: UIViewController, UITextFieldDelegate, Translat
         
         translationViewModel.delegate = self
         self.wordInputField.delegate = self
-        chanchingLanguageController.selectedSegmentIndex = 0
+        chanchingLanguageController.selectedSegmentIndex = translationViewModel.indexForSegmentController
         translationViewModel.changeLanguageDependingOnTheIndex(index: chanchingLanguageController.selectedSegmentIndex)
         isLoadingInProgress(loading: translationViewModel.isIndicatorOfDownloadingHidden)
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardWithTappingOnScreen))
         view.addGestureRecognizer(gestureRecognizer)
-        indicatorOfDownloading.isHidden = true
+        indicatorOfDownloading.isHidden = translationViewModel.isIndicatorOfDownloadingHidden
         wordInputField.returnKeyType = .go
         
     }
@@ -52,8 +53,10 @@ class TranslationViewController: UIViewController, UITextFieldDelegate, Translat
               inputText.isEmpty == false else {
             return
         }
-        indicatorOfDownloading.isHidden = false
+        indicatorOfDownloading.isHidden = translationViewModel.isIndicatorOfDownloadingHidden
         translationViewModel.transformTranslationToLanguage(text: inputText, targetLanguage: translationViewModel.appState.targetLanguage, sourceLanguage: translationViewModel.appState.sourceLanguage)
+       // indicatorOfDownloading.isHidden = translationViewModel.isIndicatorOfDownloadingHidden
+
     }
     
     @IBAction func toHistoryVC(_ sender: UIButton) {
@@ -73,6 +76,7 @@ class TranslationViewController: UIViewController, UITextFieldDelegate, Translat
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        getTranslation(translateButton)
         wordInputField.resignFirstResponder()
         return true
     }

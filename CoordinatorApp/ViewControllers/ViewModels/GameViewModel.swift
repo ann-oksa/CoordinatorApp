@@ -82,4 +82,9 @@ class GameViewModel {
             delegate?.makeAlert()
         }
     }
+    
+    func actionForNewGame() {
+        game.currentIndexOfCard = 0
+        game.someCardTitle = game.records[game.currentIndexOfCard].word2
+    }
 }

@@ -17,6 +17,7 @@ class  TranslationViewModel {
     
     var transformation = TranslationService()
     var appState: AppState
+    var indexForSegmentController = 0
     var isIndicatorOfDownloadingHidden = true {
         didSet {
             delegate?.isLoadingInProgress(loading: isIndicatorOfDownloadingHidden)
@@ -38,6 +39,7 @@ class  TranslationViewModel {
     
     func transformTranslationToLanguage(text: String, targetLanguage: Language, sourceLanguage: Language) {
         transformation.transformTranslationToLanguage(text: text, targetLanguage: targetLanguage, sourceLanguage: sourceLanguage) { translatedText in
+            self.isIndicatorOfDownloadingHidden = false
             self.delegate?.setValuesForOutlets(text: translatedText)
             self.delegate?.setValuesOfWordsDependingOnLanguages()
             self.isIndicatorOfDownloadingHidden = true
